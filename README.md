@@ -1,17 +1,17 @@
 # Counter temtem luma V0.2
 
-### First Use
+### First Hunt
 1. Select your temtem
 2. Click on checkbox for Saipark or not for ajust rate luma
 3. Click on OK
 4. You can farm now :)
 
-### Load State
+### Load Hunt
 1. Load Hunt
 3. Find your save : the file is {temtem_name-rate}.txt
 2. let's farm
 
-### Save State
+### Save Hunt
 1. Save Hunt : the file is {temtem_name-rate}.txt
 2. let's farm
 
