@@ -51,7 +51,7 @@ Local $iLoadButton = GUICtrlCreateButton("Load Hunt", 190, 40, 60)
 GUICtrlSetOnEvent($iLoadButton, "LoadButton")
 
 Local $iMeetButton = GUICtrlCreateLabel("Number of meetings : " & $Var_1, 30, 80)
-Local $iPercentButton = GUICtrlCreateLabel("Percentage : " & $Var_2 & "%", 30, 100, 190, 200)
+Local $iPercentButton = GUICtrlCreateLabel("Progress : " & $Var_2 & "%", 30, 100, 190, 200)
 GUISetState()
 
 Func OKButton()
@@ -99,7 +99,7 @@ Func LoadButton()
 
         GUICtrlSetData($List, $Selected)
         GUICtrlSetData($iMeetButton, "Number of meetings : " & $Var_1)
-        GUICtrlSetData($iPercentButton, "Percentage : " & $Var_2 & "%")
+        GUICtrlSetData($iPercentButton, "Progress : " & $Var_2 & "%")
         GUICtrlSetState($iSaiparkBox, $GUI_CHECKED)
 
     Next
@@ -129,7 +129,7 @@ While 1
             $Var_1+= 1
             $Var_2 = (100*$Var_1)/$rate
             GUICtrlSetData($iMeetButton, "Number of meetings : " & $Var_1)
-            GUICtrlSetData($iPercentButton, "Percentage : " & $Var_2 & "%")
+            GUICtrlSetData($iPercentButton, "Progress : " & $Var_2 & "%")
             $first_tem = 1
         EndIf
 
@@ -139,7 +139,7 @@ While 1
             $Var_1+= 1
             $Var_2 = (100*$Var_1)/$rate
             GUICtrlSetData($iMeetButton, "Number of meetings : " & $Var_1)
-            GUICtrlSetData($iPercentButton, "Percentage : " & $Var_2 & "%")
+            GUICtrlSetData($iPercentButton, "Progress : " & $Var_2 & "%")
             $second_tem = 1
         EndIf
     Else
