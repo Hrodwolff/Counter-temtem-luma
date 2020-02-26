@@ -60,9 +60,9 @@ Func OKButton()
 EndFunc   ;==>OKButton
 
 Func SaveButton()
-    Local Const $sFilePath = @ScriptDir&"/Save-hunt/"& $Selected &"-"& $rate &"-"& $Var_1 &".txt"
+    Local Const $sFilePath = @ScriptDir&"/Save-hunt/"& $Selected &"-"& $rate & ".txt"
 
-    Local $hFileOpen = FileOpen($sFilePath, $FO_APPEND)
+    Local $hFileOpen = FileOpen($sFilePath, $FO_OVERWRITE)
 
     FileWrite($hFileOpen, $Selected & @CRLF)
     FileWrite($hFileOpen, $Var_1 & @CRLF)
@@ -100,7 +100,10 @@ Func LoadButton()
         GUICtrlSetData($List, $Selected)
         GUICtrlSetData($iMeetButton, "Number of meetings : " & $Var_1)
         GUICtrlSetData($iPercentButton, "Progress : " & $Var_2 & "%")
-        GUICtrlSetState($iSaiparkBox, $GUI_CHECKED)
+        
+        If $rate = 4000 Then
+            GUICtrlSetState($iSaiparkBox, $GUI_CHECKED)
+        EndIf
 
     Next
     FileClose($sFileOpenDialog)
