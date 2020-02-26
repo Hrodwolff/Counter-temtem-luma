@@ -23,7 +23,7 @@ It's only french database scan temtem for now (english is maybe same), if you wa
 
 [Download me](https://github.com/Hrodwolff/Counter-temtem-luma/archive/master.zip)
 
-Launch the appropriate exe (counter-64bits.exe or counter-32bits.exe) file
+Launch the appropriate exe file (counter-64bits.exe or counter-32bits.exe)
 
 ## PATCHNOTE V0.2
 
