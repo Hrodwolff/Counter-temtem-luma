@@ -5,13 +5,13 @@
 3. Click on OK
 4. You can farm now :)
 
-Scan temtem is only french for now, if you want help you can scan temtem in other language
+Scan temtem is only french for now (english is maybe same), if you want help you can scan temtem in other language
 
 ## DOWNLOAD
 
-[Version 32 bits](https://github.com/Hrodwolff/Counter-temtem-luma/raw/master/counter-32bits.exe)
+[Download me](https://github.com/Hrodwolff/Counter-temtem-luma/archive/master.zip)
 
-[Version 64 bits](https://github.com/Hrodwolff/Counter-temtem-luma/raw/master/counter-64bits.exe)
+Launch the appropriate exe file
 
 ## DISCLAIMER
 
