@@ -1,4 +1,4 @@
-# Counter temtem luma V0.1
+# Counter temtem luma V0.2
 
 1. Select your temtem
 2. Click on checkbox for Saipark or not for ajust rate luma
@@ -12,6 +12,12 @@ Scan temtem is only french for now (english is maybe same), if you want help you
 [Download me](https://github.com/Hrodwolff/Counter-temtem-luma/archive/master.zip)
 
 Launch the appropriate exe file
+
+## PATCHNOTE V0.2
+
+```
+- Add Load/Save hunt system
+```
 
 ## DISCLAIMER
 
