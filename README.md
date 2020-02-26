@@ -5,7 +5,7 @@
 3. Click on OK
 4. You can farm now :)
 
-Scan temtem is only french for now, if you whant help you can scan temtem in other language
+Scan temtem is only french for now, if you want help you can scan temtem in other language
 
 ## DOWNLOAD
 
