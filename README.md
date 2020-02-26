@@ -1,4 +1,4 @@
-# Counter-temtem-luma
+# Counter temtem luma V0.1
 
 1. Select your temtem
 2. Click on checkbox for Saipark or not for ajust rate luma
