@@ -1,4 +1,4 @@
-# Counter temtem luma V0.2
+# Counter temtem luma V0.2.1
 
 ### First Hunt
 1. Select your temtem
@@ -25,10 +25,11 @@ It's only french database scan temtem for now (english is maybe same), if you wa
 
 Launch the appropriate exe file (counter-64bits.exe or counter-32bits.exe)
 
-## PATCHNOTE V0.2
+## PATCHNOTE V0.2.1
 
 ```
-- Add Load/Save hunt system
+- Add Load/Save hunt system (v0.2)
+- Update image and code for best recognition (v0.2.1)
 ```
 
 ## DISCLAIMER
