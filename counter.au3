@@ -123,11 +123,15 @@ While 1
         $rate = 8000
     EndIf
     ;check combat or not
-    Local $search_combat = _ImageSearchArea("DB/img_analysis/check_combat.png", 0, 770, 850, 890, 930, $x, $y, 0)
-    If $search_combat = 0 Then
+    Local $check_combat = _ImageSearchArea("DB/img_analysis/check_combat.png", 0, 770, 850, 890, 930, $x, $y, 0)
+    Local $check_map = _ImageSearchArea("DB/img_analysis/check_map.png", 0, 1700, 235, 1830, 280, $x, $y, 50)
+    Local $check_inventory = _ImageSearchArea("DB/img_analysis/check_inventory.png", 0, 620, 0, 1310, 90, $x, $y, 50)
+    Local $check_team = _ImageSearchArea("DB/img_analysis/check_team.png", 0, 1740, 260, 1850, 450, $x, $y, 50)
+    Local $check_catch = _ImageSearchArea("DB/img_analysis/check_catch.png", 0, 590, 320, 730, 490, $x, $y, 50)
+    If $check_combat = 1 AND $check_map = 0 AND $check_inventory = 0 AND $check_team = 0 AND $check_catch = 0 Then
         $combat_statut = 1
         ;first temtem
-        Local $search_tem_1 = _ImageSearchArea("DB/img_analysis/"& $Selected &".png", 0, 1140, 0, 1400, 70, $x, $y, 170)
+        Local $search_tem_1 = _ImageSearchArea("DB/img_analysis/"& $Selected &".png", 0, 1140, 0, 1400, 70, $x, $y, 200)
         If $search_tem_1 AND $first_tem = 0 Then
             $Var_1+= 1
             $Var_2 = (100*$Var_1)/$rate
@@ -137,7 +141,7 @@ While 1
         EndIf
 
         ;second or alone temtem
-        Local $search_tem_2 = _ImageSearchArea("DB/img_analysis/"& $Selected &".png", 1, 1550, 70, 1750, 120, $x, $y, 170)
+        Local $search_tem_2 = _ImageSearchArea("DB/img_analysis/"& $Selected &".png", 1, 1550, 70, 1750, 120, $x, $y, 200)
         If $search_tem_2 AND $second_tem = 0 Then
             $Var_1+= 1
             $Var_2 = (100*$Var_1)/$rate
@@ -147,13 +151,18 @@ While 1
         EndIf
     Else
         $combat_statut = 0
+    EndIf
+    
+    If $check_combat = 0 AND $check_map = 1 Then
+        $combat_statut = 0
         $first_tem = 0
         $second_tem = 0
     EndIf
     Sleep(1000) ; Sleep to reduce CPU usage
 
-    ;$mPos = MouseGetPos()
-    ;ToolTip("x: " & $mPos[0] & @CRLF & "y: " & $mPos[1])
+    $mPos = MouseGetPos()
+    ;ToolTip("x: " & $mPos[0] & @CRLF & "y: " & $mPos[1] )
+    ToolTip($first_tem & $second_tem & @CRLF & "x: " & $mPos[0] & @CRLF & "y: " & $mPos[1] )
 WEnd
 
 Func _IsChecked($idControlID)
