@@ -5,6 +5,10 @@
 #include <WinAPIFiles.au3>
 #include <File.au3>
 #include <Array.au3>
+#include <WindowsConstants.au3>
+#Include <WinAPI.au3>
+#Include <FontConstants.au3>
+#include <ColorConstants.au3>
 
 Opt("GUIOnEventMode", 1)
 ; ===============================================================================================================================
@@ -28,8 +32,9 @@ Global $Selected
 Global $icon
 Global $img
 
+;=================================== BEGIN Normal Window ======================================================
 ; Title
-$hGUI = GUICreate("Temtem Counter Luma", 450, 150)
+$hGUI = GUICreate("Temtem Counter Luma", 450, 150, $WS_EX_OVERLAPPEDWINDOW)
 ; Close
 GUISetOnEvent($GUI_EVENT_CLOSE, "CLOSEButton")
 
@@ -53,6 +58,26 @@ GUICtrlSetOnEvent($iLoadButton, "LoadButton")
 Local $iMeetButton = GUICtrlCreateLabel("Number of meetings : " & $Var_1, 30, 80, 190)
 Local $iPercentButton = GUICtrlCreateLabel("Progress : " & $Var_2 & "%", 30, 100, 190, 200)
 GUISetState()
+
+;=================================== END Normal Window ======================================================
+
+;=================================== BEGIN OVERLAY ======================================================
+
+    Local $Form1 = GUICreate("", 500, 500, 0, 0, $WS_POPUP, $WS_EX_TOOLWINDOW + $WS_EX_TOPMOST + $WS_EX_LAYERED)
+    GUISetBkColor(0x0000F4)
+    _WinAPI_SetLayeredWindowAttributes($Form1, 0x0000F4)
+
+    Local $overlay_count_meet = GUICtrlCreateLabel("Number of meetings : " & $Var_1, 30, 80, 400, 100)
+    GUICtrlSetFont($overlay_count_meet, 20, 600, 2, "Arial", $ANTIALIASED_QUALITY)
+    GUICtrlSetColor($overlay_count_meet, $COLOR_WHITE)
+    Local $overlay_count_progress = GUICtrlCreateLabel("Progress : " & $Var_2 & "%", 30, 120, 400, 100)
+    GUICtrlSetFont($overlay_count_progress, 20, 600, 2, "Arial", $ANTIALIASED_QUALITY)
+    GUICtrlSetColor($overlay_count_progress, $COLOR_WHITE)
+    
+    GUISetState()
+
+;=================================== END OVERLAY ======================================================
+
 
 Func OKButton()
     $Selected = GUICtrlRead($List)
@@ -100,6 +125,8 @@ Func LoadButton()
         GUICtrlSetData($List, $Selected)
         GUICtrlSetData($iMeetButton, "Number of meetings : " & $Var_1)
         GUICtrlSetData($iPercentButton, "Progress : " & $Var_2 & "%")
+        GUICtrlSetData($overlay_count_meet, "Number of meetings : " & $Var_1)
+        GUICtrlSetData($overlay_count_progress, "Progress : " & $Var_2 & "%")
         
         If $rate = 4000 Then
             GUICtrlSetState($iSaiparkBox, $GUI_CHECKED)
@@ -137,6 +164,8 @@ While 1
             $Var_2 = (100*$Var_1)/$rate
             GUICtrlSetData($iMeetButton, "Number of meetings : " & $Var_1)
             GUICtrlSetData($iPercentButton, "Progress : " & $Var_2 & "%")
+            GUICtrlSetData($overlay_count_meet, "Number of meetings : " & $Var_1)
+            GUICtrlSetData($overlay_count_progress, "Progress : " & $Var_2 & "%")
             $first_tem = 1
         EndIf
 
@@ -147,6 +176,8 @@ While 1
             $Var_2 = (100*$Var_1)/$rate
             GUICtrlSetData($iMeetButton, "Number of meetings : " & $Var_1)
             GUICtrlSetData($iPercentButton, "Progress : " & $Var_2 & "%")
+            GUICtrlSetData($overlay_count_meet, "Number of meetings : " & $Var_1)
+            GUICtrlSetData($overlay_count_progress, "Progress : " & $Var_2 & "%")
             $second_tem = 1
         EndIf
     Else
