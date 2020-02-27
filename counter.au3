@@ -152,7 +152,7 @@ While 1
     Else
         $combat_statut = 0
     EndIf
-    
+
     If $check_combat = 0 AND $check_map = 1 Then
         $combat_statut = 0
         $first_tem = 0
@@ -160,9 +160,9 @@ While 1
     EndIf
     Sleep(1000) ; Sleep to reduce CPU usage
 
-    $mPos = MouseGetPos()
+    ;$mPos = MouseGetPos()
     ;ToolTip("x: " & $mPos[0] & @CRLF & "y: " & $mPos[1] )
-    ToolTip($first_tem & $second_tem & @CRLF & "x: " & $mPos[0] & @CRLF & "y: " & $mPos[1] )
+    ;ToolTip($first_tem & $second_tem & @CRLF & "x: " & $mPos[0] & @CRLF & "y: " & $mPos[1] )
 WEnd
 
 Func _IsChecked($idControlID)
