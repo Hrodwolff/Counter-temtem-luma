@@ -50,7 +50,7 @@ GUICtrlSetOnEvent($iSaveButton, "SaveButton")
 Local $iLoadButton = GUICtrlCreateButton("Load Hunt", 190, 40, 60)
 GUICtrlSetOnEvent($iLoadButton, "LoadButton")
 
-Local $iMeetButton = GUICtrlCreateLabel("Number of meetings : " & $Var_1, 30, 80)
+Local $iMeetButton = GUICtrlCreateLabel("Number of meetings : " & $Var_1, 30, 80, 190)
 Local $iPercentButton = GUICtrlCreateLabel("Progress : " & $Var_2 & "%", 30, 100, 190, 200)
 GUISetState()
 
@@ -162,7 +162,7 @@ While 1
 
     ;$mPos = MouseGetPos()
     ;ToolTip("x: " & $mPos[0] & @CRLF & "y: " & $mPos[1] )
-    ;aToolTip($first_tem & $second_tem & @CRLF & "x: " & $mPos[0] & @CRLF & "y: " & $mPos[1] )
+    ;ToolTip($first_tem & $second_tem & @CRLF & "x: " & $mPos[0] & @CRLF & "y: " & $mPos[1] )
 WEnd
 
 Func _IsChecked($idControlID)
