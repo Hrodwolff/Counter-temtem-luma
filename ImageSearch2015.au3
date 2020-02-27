@@ -19,11 +19,11 @@ Func _ImageSearchStartup()
 	$sOSArch = @OSArch ;Check if running on x64 or x32 Windows ;@OSArch Returns one of the following: "X86", "IA64", "X64" - this is the architecture type of the currently running operating system.
 	$sAutoItX64 = @AutoItX64 ;Check if using x64 AutoIt ;@AutoItX64 Returns 1 if the script is running under the native x64 version of AutoIt.
 	If $sOSArch = "X86" Or $sAutoItX64 = 0 Then
-		;cr("+>" & "@OSArch=" & $sOSArch & @TAB & "@AutoItX64=" & $sAutoItX64 & @TAB & "therefore using x32 ImageSearch DLL")
+		cr("+>" & "@OSArch=" & $sOSArch & @TAB & "@AutoItX64=" & $sAutoItX64 & @TAB & "therefore using x32 ImageSearch DLL")
 		$h_ImageSearchDLL = DllOpen("ImageSearchDLLx32.dll")
 		If $h_ImageSearchDLL = -1 Then Return "DllOpen failure"
 	ElseIf $sOSArch = "X64" And $sAutoItX64 = 1 Then
-		;cr("+>" & "@OSArch=" & $sOSArch & @TAB & "@AutoItX64=" & $sAutoItX64 & @TAB & "therefore using x64 ImageSearch DLL")
+		cr("+>" & "@OSArch=" & $sOSArch & @TAB & "@AutoItX64=" & $sAutoItX64 & @TAB & "therefore using x64 ImageSearch DLL")
 		$h_ImageSearchDLL = DllOpen("ImageSearchDLLx64.dll")
 		If $h_ImageSearchDLL = -1 Then Return "DllOpen failure"
 	Else
