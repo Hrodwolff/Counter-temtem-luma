@@ -128,7 +128,7 @@ Func LoadButton()
         GUICtrlSetData($overlay_count_meet, "Number of meetings : " & $Var_1)
         GUICtrlSetData($overlay_count_progress, "Progress : " & $Var_2 & "%")
         
-        If $rate = 4000 Then
+        If $rate = 3200 Then
             GUICtrlSetState($iSaiparkBox, $GUI_CHECKED)
         EndIf
 
