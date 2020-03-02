@@ -15,7 +15,7 @@
 1. Save Hunt : the file is {temtem_name-rate}.txt
 2. let's farm
 
-Rate is 4000 for saipark and 8000 outside the saipark
+Rate is 3200 for saipark and 8000 outside the saipark
 
 It's only french database scan temtem for now (english is maybe same), if you want help you can scan temtem in other language
 
