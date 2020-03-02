@@ -145,7 +145,7 @@ EndFunc   ;==>CLOSEButton
 ; Loop until user exits
 While 1
     If _IsChecked($iSaiparkBox) Then
-        $rate = 4000
+        $rate = 3200
     Else
         $rate = 8000
     EndIf
