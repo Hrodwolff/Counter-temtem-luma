@@ -150,12 +150,12 @@ While 1
         $rate = 8000
     EndIf
     ;check combat or not
-    Local $check_combat = _ImageSearchArea("DB/img_analysis/check_combat.png", 0, 430, 780, 585, 820, $x, $y, 0)
+    Local $check_combat = _ImageSearchArea2("DB/img_analysis/check_combat.png", 0, 430, 780, 585, 820, $x, $y, 0)
     Local $check_map = _ImageSearchArea("DB/img_analysis/check_map.png", 0, 1700, 235, 1830, 280, $x, $y, 50)
     Local $check_inventory = _ImageSearchArea("DB/img_analysis/check_inventory.png", 0, 620, 0, 1310, 90, $x, $y, 50)
     Local $check_team = _ImageSearchArea("DB/img_analysis/check_team.png", 0, 1740, 260, 1850, 450, $x, $y, 50)
     Local $check_catch = _ImageSearchArea("DB/img_analysis/check_catch.png", 0, 590, 320, 730, 490, $x, $y, 50)
-    If $check_combat = 1 AND $check_map = 0 AND $check_inventory = 0 AND $check_team = 0 AND $check_catch = 0 Then
+    If $check_combat = True AND $check_map = 0 AND $check_inventory = 0 AND $check_team = 0 AND $check_catch = 0 Then
         $combat_statut = 1
         ;first temtem
         Local $search_tem_1 = _ImageSearchArea("DB/img_analysis/"& $Selected &".png", 0, 1140, 0, 1400, 120, $x, $y, 170)
@@ -184,7 +184,7 @@ While 1
         $combat_statut = 0
     EndIf
 
-    If $check_combat = 0 AND $check_map = 1 Then
+    If $check_combat = False AND $check_map = 1 Then
         $combat_statut = 0
         $first_tem = 0
         $second_tem = 0
@@ -193,7 +193,7 @@ While 1
 
     ;$mPos = MouseGetPos()
     ;ToolTip("x: " & $mPos[0] & @CRLF & "y: " & $mPos[1] )
-    ;ToolTip($first_tem & $second_tem & @CRLF & "x: " & $mPos[0] & @CRLF & "y: " & $mPos[1] )
+    ;ToolTip($check_combat & @CRLF & "x: " & $mPos[0] & @CRLF & "y: " & $mPos[1] )
 WEnd
 
 Func _IsChecked($idControlID)

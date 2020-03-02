@@ -98,6 +98,28 @@ Func _ImageSearchArea($findImage, $resultPosition, $x1, $y1, $right, $bottom, By
 	EndIf
 EndFunc   ;==>_ImageSearchArea
 
+Func _ImageSearchArea2($findImage, $resultPosition, $x1, $y1, $right, $bottom, ByRef $x, ByRef $y, $tolerance = 0);Credits to Sven for the Transparency addition
+	If Not FileExists($findImage) Then Return "Image File not found"
+	If $tolerance < 0 Or $tolerance > 255 Then $tolerance = 0
+	If $h_ImageSearchDLL = -1 Then _ImageSearchStartup()
+
+	If $tolerance > 0 Then $findImage = "*" & $tolerance & " " & $findImage
+	$result = DllCall($h_ImageSearchDLL, "str", "ImageSearch", "int", $x1, "int", $y1, "int", $right, "int", $bottom, "str", $findImage)
+	If @error Then Return "DllCall Error=" & @error
+	If $result = "0" Or Not IsArray($result) Or $result[0] = "0" Then Return False
+
+	$array = StringSplit($result[0], "|")
+	If (UBound($array) >= 4) Then
+		$x = Int(Number($array[2])); Get the x,y location of the match
+		$y = Int(Number($array[3]))
+		If $resultPosition = 1 Then
+			$x = $x + Int(Number($array[4]) / 2); Account for the size of the image to compute the centre of search
+			$y = $y + Int(Number($array[5]) / 2)
+		EndIf
+		Return True
+	EndIf
+EndFunc   ;==>_ImageSearchArea
+
 ;===============================================================================
 ;
 ; Description:      Wait for a specified number of seconds for an image to appear
