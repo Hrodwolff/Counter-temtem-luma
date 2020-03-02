@@ -158,7 +158,7 @@ While 1
     If $check_combat = 1 AND $check_map = 0 AND $check_inventory = 0 AND $check_team = 0 AND $check_catch = 0 Then
         $combat_statut = 1
         ;first temtem
-        Local $search_tem_1 = _ImageSearchArea("DB/img_analysis/"& $Selected &".png", 0, 1140, 0, 1400, 120, $x, $y, 140)
+        Local $search_tem_1 = _ImageSearchArea("DB/img_analysis/"& $Selected &".png", 0, 1140, 0, 1400, 120, $x, $y, 170)
         If $search_tem_1 == True AND $first_tem = 0 Then
             $Var_1+= 1
             $Var_2 = (100*$Var_1)/$rate
@@ -170,7 +170,7 @@ While 1
         EndIf
 
         ;second or alone temtem
-        Local $search_tem_2 = _ImageSearchArea("DB/img_analysis/"& $Selected &".png", 1, 1550, 70, 1750, 120, $x, $y, 140)
+        Local $search_tem_2 = _ImageSearchArea("DB/img_analysis/"& $Selected &".png", 1, 1550, 70, 1750, 120, $x, $y, 170)
         If $search_tem_2 == True AND $second_tem = 0 Then
             $Var_1+= 1
             $Var_2 = (100*$Var_1)/$rate
