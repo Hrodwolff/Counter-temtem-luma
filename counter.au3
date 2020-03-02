@@ -150,7 +150,7 @@ While 1
         $rate = 8000
     EndIf
     ;check combat or not
-    Local $check_combat = _ImageSearchArea("DB/img_analysis/check_combat.png", 0, 770, 850, 890, 930, $x, $y, 0)
+    Local $check_combat = _ImageSearchArea("DB/img_analysis/check_combat.png", 0, 430, 780, 585, 820, $x, $y, 0)
     Local $check_map = _ImageSearchArea("DB/img_analysis/check_map.png", 0, 1700, 235, 1830, 280, $x, $y, 50)
     Local $check_inventory = _ImageSearchArea("DB/img_analysis/check_inventory.png", 0, 620, 0, 1310, 90, $x, $y, 50)
     Local $check_team = _ImageSearchArea("DB/img_analysis/check_team.png", 0, 1740, 260, 1850, 450, $x, $y, 50)
